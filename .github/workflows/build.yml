@@ -1,0 +1,41 @@
+name: Build DRAGONIC System APK
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
+      - name: Build Release APK
+        run: ./gradlew assembleRelease --stacktrace
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: DRAGONIC-System-Release
+          path: app/build/outputs/apk/release/*.apk
+          retention-days: 30
+
+      - name: Build Summary
+        run: |
+          echo "## ✅ DRAGONIC System Build Complete" >> $GITHUB_STEP_SUMMARY
+          echo "APK ready for download in Artifacts section." >> $GITHUB_STEP_SUMMARY
+          echo "**Developer:** Pai Leonore · Leonore Tech Team" >> $GITHUB_STEP_SUMMARY
