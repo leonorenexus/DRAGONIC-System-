@@ -1,0 +1,97 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Background circle -->
+    <path
+        android:fillColor="#0A0A0F"
+        android:pathData="M54,54m-54,0a54,54 0,1 1,108 0a54,54 0,1 1,-108 0" />
+
+    <!-- Outer hex ring -->
+    <path
+        android:strokeColor="#00FFFF"
+        android:strokeWidth="1.5"
+        android:fillColor="#00000000"
+        android:pathData="M54,10 L90,32 L90,76 L54,98 L18,76 L18,32 Z" />
+
+    <!-- Inner hex ring -->
+    <path
+        android:strokeColor="#7B2FFF"
+        android:strokeWidth="1"
+        android:fillColor="#00000000"
+        android:pathData="M54,18 L84,36 L84,72 L54,90 L24,72 L24,36 Z" />
+
+    <!-- Dragon eye - outer glow -->
+    <path
+        android:fillColor="#00FFFF"
+        android:fillAlpha="0.2"
+        android:pathData="M54,54m-18,0a18,18 0,1 1,36 0a18,18 0,1 1,-36 0" />
+
+    <!-- Dragon eye - iris -->
+    <path
+        android:fillColor="#0A0A1F"
+        android:pathData="M54,54m-13,0a13,13 0,1 1,26 0a13,13 0,1 1,-26 0" />
+
+    <!-- Dragon eye - slit pupil -->
+    <path
+        android:fillColor="#00FFFF"
+        android:pathData="M54,42 C57,42 59,47 59,54 C59,61 57,66 54,66 C51,66 49,61 49,54 C49,47 51,42 54,42 Z" />
+
+    <!-- Eye iris ring -->
+    <path
+        android:strokeColor="#00FFFF"
+        android:strokeWidth="1.5"
+        android:fillColor="#00000000"
+        android:pathData="M54,54m-13,0a13,13 0,1 1,26 0a13,13 0,1 1,-26 0" />
+
+    <!-- Dragon wings left -->
+    <path
+        android:fillColor="#7B2FFF"
+        android:fillAlpha="0.8"
+        android:pathData="M36,40 L22,30 L26,50 L36,48 Z" />
+
+    <!-- Dragon wings right -->
+    <path
+        android:fillColor="#7B2FFF"
+        android:fillAlpha="0.8"
+        android:pathData="M72,40 L86,30 L82,50 L72,48 Z" />
+
+    <!-- Scan lines -->
+    <path
+        android:strokeColor="#00FFFF"
+        android:strokeWidth="0.5"
+        android:fillColor="#00000000"
+        android:strokeAlpha="0.4"
+        android:pathData="M18,48 L90,48" />
+    <path
+        android:strokeColor="#00FFFF"
+        android:strokeWidth="0.5"
+        android:fillColor="#00000000"
+        android:strokeAlpha="0.4"
+        android:pathData="M18,60 L90,60" />
+
+    <!-- Corner markers -->
+    <path
+        android:strokeColor="#00FFFF"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:pathData="M28,28 L28,36 M28,28 L36,28" />
+    <path
+        android:strokeColor="#00FFFF"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:pathData="M80,28 L80,36 M80,28 L72,28" />
+    <path
+        android:strokeColor="#00FFFF"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:pathData="M28,80 L28,72 M28,80 L36,80" />
+    <path
+        android:strokeColor="#00FFFF"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:pathData="M80,80 L80,72 M80,80 L72,80" />
+
+</vector>
