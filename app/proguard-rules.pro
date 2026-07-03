@@ -1,0 +1,3 @@
+-keep class com.dragonic.system.** { *; }
+-keep class com.google.mlkit.** { *; }
+-dontwarn com.google.mlkit.**
