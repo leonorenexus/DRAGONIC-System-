@@ -18,17 +18,17 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Setup Gradle Wrapper JAR
+        run: |
+          mkdir -p gradle/wrapper
+          curl -fL "https://services.gradle.org/distributions/gradle-8.9-wrapper.jar" \
+            -o gradle/wrapper/gradle-wrapper.jar
+
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
       - name: Make gradlew executable
         run: chmod +x gradlew
-
-      - name: Setup Gradle Wrapper JAR
-        run: |
-          mkdir -p gradle/wrapper
-          curl -L https://raw.githubusercontent.com/gradle/gradle/v8.9.0/gradle/wrapper/gradle-wrapper.jar \
-            -o gradle/wrapper/gradle-wrapper.jar
 
       - name: Build Release APK
         run: ./gradlew assembleRelease --stacktrace
