@@ -18,13 +18,17 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Install Gradle & Generate Wrapper
+      - name: Setup Gradle & Generate Wrapper JAR
         uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: '8.9'
 
-      - name: Generate Gradle Wrapper
-        run: gradle wrapper --gradle-version 8.9
+      - name: Copy Wrapper JAR
+        run: |
+          mkdir -p gradle/wrapper
+          GRADLE_HOME=$(gradle --version 2>/dev/null | grep "Gradle home" | awk '{print $3}' || echo "$HOME/.gradle/wrapper/dists/gradle-8.9-bin/*/gradle-8.9")
+          find $HOME/.gradle/wrapper/dists -name "gradle-wrapper.jar" 2>/dev/null | head -1 | xargs -I{} cp {} gradle/wrapper/gradle-wrapper.jar || \
+          find $HOME/.gradle -name "*.jar" -path "*/wrapper/*" 2>/dev/null | head -1 | xargs -I{} cp {} gradle/wrapper/gradle-wrapper.jar
 
       - name: Make gradlew executable
         run: chmod +x gradlew
